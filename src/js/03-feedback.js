@@ -16,8 +16,7 @@ if (keyValue) {
 }
 
 refs.form.addEventListener('submit', onFormSubmit);
-refs.email.addEventListener('input', saveTextValue);
-refs.textarea.addEventListener('input', saveTextValue);
+refs.form.addEventListener('input', saveTextValue);
 
 function saveTextValue() {
   formData.message = refs.textarea.value;
@@ -31,26 +30,3 @@ function onFormSubmit(e) {
   localStorage.removeItem(keyName);
   refs.form.reset();
 }
-
-//===================================================================================================================================
-
-// if (keyValue) {
-//   const localData = JSON.parse(keyValue);
-//   console.log(localData);
-// }
-
-// refs.form.addEventListener('submit', onFormSubmit);
-// refs.form.addEventListener('input', saveTextValue);
-
-// function onFormSubmit(event) {
-//   event.preventDefault();
-//   localStorage.removeItem(keyName);
-//   refs.textarea.value = '';
-//   refs.email.value = '';
-// }
-
-// function saveTextValue(e) {
-//   console.log(e.target.name);
-//   formData[e.target.name] = e.target.value;
-//   localStorage.setItem(keyName, JSON.stringify(formData));
-// }
